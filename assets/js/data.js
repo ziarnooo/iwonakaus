@@ -139,8 +139,9 @@ const I18N = {
     "co.street":"Ulica i numer","co.city":"Miasto","co.zip":"Kod pocztowy","co.country":"Kraj","co.notes":"Uwagi do zamówienia (opcjonalnie)",
     "co.paynote":"Płatności online zostaną podpięte wkrótce. Złóż zamówienie, a skontaktujemy się w sprawie płatności i wysyłki.",
     "co.summary":"Podsumowanie","co.subtotal":"Wartość dzieł","co.shippingfee":"Wysyłka","co.free":"gratis","co.grand":"Do zapłaty",
-    "co.place":"Złóż zamówienie","co.empty":"Koszyk jest pusty.","co.emptycta":"Wróć do sklepu",
-    "co.placed":"Dziękujemy! Otworzyliśmy wiadomość z Twoim zamówieniem - wyślij ją do nas, a odezwiemy się w sprawie płatności i wysyłki."
+    "co.place":"Złóż zamówienie","co.sending":"Wysyłanie…","co.empty":"Koszyk jest pusty.","co.emptycta":"Wróć do sklepu",
+    "co.error":"Nie udało się wysłać zamówienia. Spróbuj ponownie lub napisz na iwonkaus@wp.pl.",
+    "co.placed":"Dziękujemy! Zamówienie zostało wysłane - odezwiemy się w sprawie płatności i wysyłki."
   },
   en:{
     "nav.about":"About","nav.portfolio":"Portfolio","nav.shop":"Shop","nav.contact":"Contact",
@@ -187,7 +188,8 @@ const I18N = {
     "co.street":"Street and number","co.city":"City","co.zip":"Postcode","co.country":"Country","co.notes":"Order notes (optional)",
     "co.paynote":"Online payments will be connected soon. Place your order and we'll be in touch about payment and shipping.",
     "co.summary":"Summary","co.subtotal":"Artwork value","co.shippingfee":"Shipping","co.free":"free","co.grand":"Total due",
-    "co.place":"Place order","co.empty":"Your cart is empty.","co.emptycta":"Back to shop",
-    "co.placed":"Thank you! We've opened an email with your order - send it to us and we'll be in touch about payment and shipping."
+    "co.place":"Place order","co.sending":"Sending…","co.empty":"Your cart is empty.","co.emptycta":"Back to shop",
+    "co.error":"We couldn't send your order. Please try again or email iwonkaus@wp.pl.",
+    "co.placed":"Thank you! Your order has been sent - we'll be in touch about payment and shipping."
   }
 };

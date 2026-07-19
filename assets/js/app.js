@@ -289,41 +289,51 @@ function renderCheckout(){
   wrap.querySelector("#coShip").textContent = t("co.free");
   wrap.querySelector("#coGrand").textContent = fmt(sub);
 }
-const SHOP_EMAIL = "iwonkaus@wp.pl";
+const WEB3FORMS_KEY = "377a94b8-0a74-4db2-b62d-86f6e674f028";
 const coForm = $("#coForm");
 if(coForm){
-  coForm.addEventListener("submit", e=>{
+  coForm.addEventListener("submit", async e=>{
     e.preventDefault();
     if(!coForm.reportValidity()) return;
     const lines = cartLines();
+    if(!lines.length) return;
     const val = id => (document.getElementById(id)?.value || "").trim();
-    const itemsTxt = lines.map(l=>`- ${l.item.title.pl} (${l.item.medium.pl}) x${l.qty} = ${fmt(l.item.price*l.qty)}`).join("\n");
-    const body =
-`Nowe zamowienie ze strony iwonakaus.pl
+    const name = `${val("coFirst")} ${val("coLast")}`.trim();
+    const itemsTxt = lines.map(l=>`- ${l.item.title.pl} (${l.item.medium.pl}, ${l.item.dim}) x${l.qty} = ${fmt(l.item.price*l.qty)}`).join("\n");
 
-ZAMOWIENIE:
-${itemsTxt}
-Razem: ${fmt(cartTotal())}
+    const fd = new FormData();
+    fd.append("access_key", WEB3FORMS_KEY);
+    fd.append("subject", `Nowe zamówienie iwonakaus.pl — ${name}`);
+    fd.append("from_name", "Sklep iwonakaus.pl");
+    fd.append("Imię i nazwisko", name);
+    fd.append("email", val("coEmail"));               // reply-to
+    fd.append("Telefon", val("coPhone"));
+    fd.append("Adres wysyłki", `${val("coStreet")}, ${val("coZip")} ${val("coCity")}, ${val("coCountry")}`);
+    fd.append("Uwagi", val("coNotes"));
+    fd.append("Zamówienie", `${itemsTxt}\n\nRAZEM: ${fmt(cartTotal())}`);
 
-KLIENT:
-${val("coFirst")} ${val("coLast")}
-E-mail: ${val("coEmail")}
-Telefon: ${val("coPhone")}
-
-WYSYLKA:
-${val("coStreet")}
-${val("coZip")} ${val("coCity")}
-${val("coCountry")}
-
-Uwagi: ${val("coNotes")}`;
-    const subject = `Zamowienie iwonakaus.pl - ${val("coFirst")} ${val("coLast")}`;
-    // interim: open the customer's mail client prefilled to the artist (no backend yet)
-    window.location.href = `mailto:${SHOP_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    localStorage.removeItem(LS_CART); updateCartCount();
-    const done = $("#coDone");
-    $("#coLayout").style.display="none";
-    done.style.display="block";
-    done.scrollIntoView({behavior:"smooth"});
+    const submitBtn = coForm.querySelector('button[type="submit"]');
+    const label = submitBtn.querySelector('[data-i18n="co.place"]') || submitBtn;
+    const prev = label.textContent;
+    label.textContent = t("co.sending");
+    submitBtn.disabled = true;
+    try{
+      const res = await fetch("https://api.web3forms.com/submit", {method:"POST", body:fd});
+      const data = await res.json();
+      if(res.ok && data.success){
+        localStorage.removeItem(LS_CART); updateCartCount();
+        $("#coLayout").style.display="none";
+        const done = $("#coDone"); done.style.display="block";
+        done.scrollIntoView({behavior:"smooth"});
+      } else {
+        alert(t("co.error"));
+      }
+    } catch(err){
+      alert(t("co.error"));
+    } finally {
+      label.textContent = prev;
+      submitBtn.disabled = false;
+    }
   });
 }
 
