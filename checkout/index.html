@@ -3,24 +3,32 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F8HZFG7MYT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-F8HZFG7MYT');
+</script>
 <title>Zamówienie - Iwona Kaus</title>
 <meta name="robots" content="noindex">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=Mrs+Saint+Delafield&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
 
 <!-- ===================== NAV ===================== -->
 <header class="nav scrolled">
   <div class="wrap">
-    <a href="index.html" class="brand">Iwona <b>Kaus</b></a>
+    <a href="../" class="brand">Iwona <b>Kaus</b></a>
     <nav class="nav-links">
-      <a href="index.html#about" class="navlink" data-i18n="nav.about">O malarce</a>
-      <a href="index.html#portfolio" class="navlink" data-i18n="nav.portfolio">Portfolio</a>
-      <a href="sklep.html" class="navlink" data-i18n="nav.shop">Sklep</a>
-      <a href="index.html#contact" class="navlink" data-i18n="nav.contact">Kontakt</a>
+      <a href="../#about" class="navlink" data-i18n="nav.about">O malarce</a>
+      <a href="../#portfolio" class="navlink" data-i18n="nav.portfolio">Portfolio</a>
+      <a href="../sklep/" class="navlink" data-i18n="nav.shop">Sklep</a>
+      <a href="../#contact" class="navlink" data-i18n="nav.contact">Kontakt</a>
     </nav>
     <div class="nav-tools">
       <div class="lang">
@@ -44,14 +52,14 @@
     <div class="co-empty" id="coEmpty" style="display:none">
       <h2 class="title" data-i18n="co.empty">Koszyk jest pusty.</h2>
       <p></p>
-      <a href="sklep.html" class="btn btn-accent"><span data-i18n="co.emptycta">Wróć do sklepu</span> <span class="arw">→</span></a>
+      <a href="../sklep/" class="btn btn-accent"><span data-i18n="co.emptycta">Wróć do sklepu</span> <span class="arw">→</span></a>
     </div>
 
     <!-- success state -->
     <div class="co-empty" id="coDone" style="display:none">
       <h2 class="title" data-i18n="co.placed">Dziękujemy!</h2>
       <p></p>
-      <a href="index.html" class="btn btn-primary"><span>Iwona Kaus</span> <span class="arw">→</span></a>
+      <a href="../" class="btn btn-primary"><span>Iwona Kaus</span> <span class="arw">→</span></a>
     </div>
 
     <div class="co-grid" id="coLayout">
@@ -98,7 +106,7 @@
           <div class="row"><span data-i18n="co.shippingfee">Wysyłka</span><span id="coShip">gratis</span></div>
           <div class="row grand"><span data-i18n="co.grand">Do zapłaty</span><span class="v" id="coGrand">0 zł</span></div>
         </div>
-        <a href="sklep.html" class="link-arw" style="margin-top:1.4rem;justify-content:center;display:flex"><span>←</span> <span data-i18n="nav.shop">Sklep</span></a>
+        <a href="../sklep/" class="link-arw" style="margin-top:1.4rem;justify-content:center;display:flex"><span>←</span> <span data-i18n="nav.shop">Sklep</span></a>
       </aside>
     </div>
   </div>
@@ -109,7 +117,7 @@
   <div class="wrap">
     <div class="foot-bottom" style="margin-top:0;border-top:0">
       <span>© <span id="year"></span> Iwona Kaus. <span data-i18n="foot.rights">Wszelkie prawa zastrzeżone.</span></span>
-      <a href="index.html" class="link-arw"><span data-i18n="foot.made">Portfolio & sklep</span></a>
+      <a href="../" class="link-arw"><span data-i18n="foot.made">Portfolio & sklep</span></a>
     </div>
   </div>
 </footer>
@@ -124,12 +132,12 @@
   <div class="drawer-body" id="cartBody"></div>
   <div class="drawer-foot" id="cartFoot">
     <div class="row"><span class="lbl" data-i18n="cart.total">Razem</span><span class="sum" id="cartSum">0 zł</span></div>
-    <a href="checkout.html" class="btn btn-accent"><span data-i18n="cart.checkout">Do kasy</span></a>
+    <a href="./" class="btn btn-accent"><span data-i18n="cart.checkout">Do kasy</span></a>
   </div>
 </aside>
 
-<script src="assets/js/data.js"></script>
-<script src="assets/js/app.js"></script>
+<script src="../assets/js/data.js"></script>
+<script src="../assets/js/app.js"></script>
 <script>document.getElementById("year").textContent=new Date().getFullYear();</script>
 </body>
 </html>

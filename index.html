@@ -3,6 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F8HZFG7MYT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-F8HZFG7MYT');
+</script>
 <title>Iwona Kaus - Malarstwo portretowe</title>
 <meta name="description" content="Iwona Kaus - malarka portrecistka. Olej, akwarela, rysunek. Portfolio oraz oryginalne obrazy i sygnowane printy do kupienia z pracowni.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,11 +23,11 @@
 <!-- ===================== NAV ===================== -->
 <header class="nav">
   <div class="wrap">
-    <a href="index.html" class="brand">Iwona <b>Kaus</b></a>
+    <a href="./" class="brand">Iwona <b>Kaus</b></a>
     <nav class="nav-links">
       <a href="#about" class="navlink" data-i18n="nav.about">O malarce</a>
       <a href="#portfolio" class="navlink" data-i18n="nav.portfolio">Portfolio</a>
-      <a href="sklep.html" class="navlink" data-i18n="nav.shop">Sklep</a>
+      <a href="sklep/" class="navlink" data-i18n="nav.shop">Sklep</a>
       <a href="#contact" class="navlink" data-i18n="nav.contact">Kontakt</a>
     </nav>
     <div class="nav-tools">
@@ -48,7 +56,7 @@
       <p class="lede" data-i18n="hero.lede">Olej, akwarela i rysunek. Portrety wydobyte z półmroku.</p>
       <div class="hero-cta">
         <a href="#portfolio" class="btn btn-primary"><span data-i18n="hero.cta1">Zobacz portfolio</span> <span class="arw">→</span></a>
-        <a href="sklep.html" class="btn btn-ghost"><span data-i18n="hero.cta2">Kup obraz</span></a>
+        <a href="sklep/" class="btn btn-ghost"><span data-i18n="hero.cta2">Kup obraz</span></a>
       </div>
     </div>
   </div>
@@ -106,7 +114,7 @@
         <span class="eyebrow reveal" data-i18n="pf.eyebrow">Wybrane prace</span>
         <h2 class="title reveal d1" data-i18n="pf.title">Portfolio</h2>
       </div>
-      <a href="sklep.html" class="link-arw reveal d1"><span data-i18n="pf.cta">Cały sklep</span> <span>→</span></a>
+      <a href="sklep/" class="link-arw reveal d1"><span data-i18n="pf.cta">Cały sklep</span> <span>→</span></a>
     </div>
     <div class="pf-grid" id="pfGrid"></div>
   </div>
@@ -126,7 +134,7 @@
     <span class="eyebrow reveal" style="justify-content:center" data-i18n="shopcta.eyebrow">Kolekcja</span>
     <h2 class="title reveal d1" data-i18n="shopcta.title">Zabierz obraz do domu</h2>
     <p class="lede reveal d2" data-i18n="shopcta.lede"></p>
-    <a href="sklep.html" class="btn btn-accent reveal d2"><span data-i18n="shopcta.btn">Przejdź do sklepu</span> <span class="arw">→</span></a>
+    <a href="sklep/" class="btn btn-accent reveal d2"><span data-i18n="shopcta.btn">Przejdź do sklepu</span> <span class="arw">→</span></a>
   </div>
 </section>
 
@@ -142,7 +150,7 @@
         <h5 data-i18n="foot.explore">Nawigacja</h5>
         <a href="#about" data-i18n="nav.about">O malarce</a>
         <a href="#portfolio" data-i18n="nav.portfolio">Portfolio</a>
-        <a href="sklep.html" data-i18n="nav.shop">Sklep</a>
+        <a href="sklep/" data-i18n="nav.shop">Sklep</a>
       </div>
       <div class="foot-col">
         <h5 data-i18n="foot.contact">Kontakt</h5>
@@ -168,7 +176,7 @@
   <div class="drawer-body" id="cartBody"></div>
   <div class="drawer-foot" id="cartFoot">
     <div class="row"><span class="lbl" data-i18n="cart.total">Razem</span><span class="sum" id="cartSum">0 zł</span></div>
-    <a href="checkout.html" class="btn btn-accent"><span data-i18n="cart.checkout">Do kasy</span> <span class="arw">→</span></a>
+    <a href="checkout/" class="btn btn-accent"><span data-i18n="cart.checkout">Do kasy</span> <span class="arw">→</span></a>
   </div>
 </aside>
 
@@ -190,7 +198,7 @@
       <div class="lb-price" id="lbPrice"></div>
       <div class="lb-actions">
         <button class="btn btn-accent" id="lbAdd"></button>
-        <a href="sklep.html" class="btn btn-ghost" id="lbShop"></a>
+        <a href="sklep/" class="btn btn-ghost" id="lbShop"></a>
       </div>
     </div>
   </div>

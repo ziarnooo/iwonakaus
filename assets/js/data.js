@@ -3,7 +3,7 @@
    [DO UZUPEŁNIENIA] tytuły, wymiary, rok, opisy - podmień na realne.
    ============================================================ */
 
-const IMG = "assets/img/";
+const IMG = "/assets/img/";
 
 /* ---- ORIGINALS (obrazy) ---- */
 const ORIGINALS = [
