@@ -11,7 +11,7 @@ const ORIGINALS = [
     id:"o1", img:IMG+"art-05-dziewczynka-malpka.jpeg", hero:true,
     title:{pl:"Dziewczynka z małpką", en:"Girl with a Monkey"},
     medium:{pl:"Olej na płótnie", en:"Oil on canvas"},
-    dim:"70 × 90 cm", year:"[rok]", price:8000, sold:false,
+    dim:"70 × 90 cm", year:"[rok]", price:8000, sold:true,
     desc:{pl:"Portret utkany ze spojrzenia i ciszy - sfora spojrzeń i zwierzę-towarzysz na skraju baśni.",
           en:"A portrait woven from gaze and stillness - a companion animal at the edge of a fairy tale."}
   },
@@ -19,7 +19,7 @@ const ORIGINALS = [
     id:"o2", img:IMG+"art-07-kobieta-zolta.png", hero:true,
     title:{pl:"Kobieta w żółci", en:"Woman in Ochre"},
     medium:{pl:"Olej na płótnie", en:"Oil on canvas"},
-    dim:"60 × 80 cm", year:"[rok]", price:8000, sold:false,
+    dim:"60 × 80 cm", year:"[rok]", price:8000, sold:true,
     desc:{pl:"Światło osiada na tkaninie jak kurz na starym instrumencie. Studium spokoju i ciężaru.",
           en:"Light settles on fabric like dust on an old instrument. A study of calm and weight."}
   },
@@ -27,7 +27,7 @@ const ORIGINALS = [
     id:"o3", img:IMG+"art-03-dziewczyna-roza.png", hero:true,
     title:{pl:"Dziewczyna z różą", en:"Girl with a Rose"},
     medium:{pl:"Olej na płótnie", en:"Oil on canvas"},
-    dim:"50 × 65 cm", year:"[rok]", price:8000, sold:false,
+    dim:"50 × 65 cm", year:"[rok]", price:8000, sold:true,
     desc:{pl:"Ciemne włosy i czerwony akcent róży - portret pełen wyczekiwania i chłodnego blasku skóry.",
           en:"Dark hair and the red accent of a rose - a portrait full of anticipation and cool luminous skin."}
   },
@@ -35,7 +35,7 @@ const ORIGINALS = [
     id:"o4", img:IMG+"art-02-kobieta-siwa.png", hero:true,
     title:{pl:"Portret kobiety", en:"Portrait of a Woman"},
     medium:{pl:"Olej na płótnie", en:"Oil on canvas"},
-    dim:"55 × 75 cm", year:"[rok]", price:8000, sold:false,
+    dim:"55 × 75 cm", year:"[rok]", price:8000, sold:true,
     desc:{pl:"Faktura twarzy zapisana śmiałym pociągnięciem - czas jako materia malarska.",
           en:"The texture of a face recorded in bold strokes - time as painterly matter."}
   },
@@ -43,7 +43,7 @@ const ORIGINALS = [
     id:"o5", img:IMG+"art-04-dziecko-bluzka.png", hero:false,
     title:{pl:"Dziecko", en:"Child"},
     medium:{pl:"Olej na płótnie", en:"Oil on canvas"},
-    dim:"45 × 60 cm", year:"[rok]", price:5000, sold:false,
+    dim:"45 × 60 cm", year:"[rok]", price:5000, sold:true,
     desc:{pl:"Ciepła, ziemista gama i niedokończony rysunek koszuli - obraz uchwycony w pół oddechu.",
           en:"A warm, earthy palette and the unfinished drawing of a shirt - a painting caught mid-breath."}
   },
@@ -51,7 +51,7 @@ const ORIGINALS = [
     id:"o6", img:IMG+"art-06-dziewczynka-jagnie.jpeg", hero:false,
     title:{pl:"Dziewczynka z jagnięciem", en:"Girl with a Lamb"},
     medium:{pl:"Olej na płótnie", en:"Oil on canvas"},
-    dim:"60 × 80 cm", year:"[rok]", price:8000, sold:false,
+    dim:"60 × 80 cm", year:"[rok]", price:8000, sold:true,
     desc:{pl:"Impresyjne, migotliwe pociągnięcia pędzla - czułość sceny rodzajowej bez sentymentu.",
           en:"Impressionistic, shimmering brushwork - the tenderness of a genre scene without sentimentality."}
   },
@@ -59,14 +59,15 @@ const ORIGINALS = [
     id:"o7", img:IMG+"art-01-akwarela-portret.png", hero:false,
     title:{pl:"Portret w sepii", en:"Portrait in Sepia"},
     medium:{pl:"Akwarela i rysunek ołówkiem", en:"Watercolour and pencil"},
-    dim:"40 × 55 cm", year:"[rok]", price:5000, sold:false,
+    dim:"40 × 55 cm", year:"[rok]", price:5000, sold:true,
     desc:{pl:"Woda i grafit spotykają się w półmroku - twarz wyłania się z laserunków jak z pamięci.",
           en:"Water and graphite meet in half-light - a face emerging from washes like a memory."}
   }
 ];
 
-/* wszystkie oryginały oznaczone jako sprzedane (printy pozostają dostępne) */
-ORIGINALS.forEach(o=>{ o.sold = true; });
+/* Dostępność obrazu ustawiasz przy każdym obrazie powyżej:
+   sold:true  = "Sprzedane" (nie da się kupić)
+   sold:false = dostępny w sklepie (przycisk "Do koszyka")               */
 
 /* ---- PRINTS (printy) - sygnowane odbitki, 500 zł ---- */
 const PRINTS = ["o1","o2","o3","o5","o6","o7"].map((rid,i)=>{
