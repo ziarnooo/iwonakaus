@@ -39,7 +39,18 @@ if(nav){
   onScroll(); window.addEventListener("scroll", onScroll, {passive:true});
 }
 const burger = $(".burger");
-if(burger){ burger.addEventListener("click", ()=> $(".nav-links").classList.toggle("mobile-open")); }
+const navLinks = $(".nav-links");
+if(burger && navLinks){
+  const setMenu = open => {
+    navLinks.classList.toggle("mobile-open", open);
+    burger.classList.toggle("open", open);
+    burger.setAttribute("aria-expanded", open ? "true":"false");
+    document.body.classList.toggle("no-scroll", open);
+  };
+  burger.addEventListener("click", ()=> setMenu(!navLinks.classList.contains("mobile-open")));
+  navLinks.querySelectorAll("a").forEach(a=> a.addEventListener("click", ()=> setMenu(false)));
+  document.addEventListener("keydown", e=>{ if(e.key==="Escape" && navLinks.classList.contains("mobile-open")) setMenu(false); });
+}
 
 /* ---------------- reveal on scroll ---------------- */
 const io = ("IntersectionObserver" in window) ? new IntersectionObserver((entries)=>{
