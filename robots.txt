@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://iwonakaus.pl/sitemap.xml
