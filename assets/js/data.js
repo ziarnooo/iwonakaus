@@ -140,7 +140,7 @@ const I18N = {
     "co.paynote":"Płatności online zostaną podpięte wkrótce. Złóż zamówienie, a skontaktujemy się w sprawie płatności i wysyłki.",
     "co.summary":"Podsumowanie","co.subtotal":"Wartość dzieł","co.shippingfee":"Wysyłka","co.free":"gratis","co.grand":"Do zapłaty",
     "co.place":"Złóż zamówienie","co.empty":"Koszyk jest pusty.","co.emptycta":"Wróć do sklepu",
-    "co.placed":"Dziękujemy! Zamówienie zostało zapisane - wkrótce się odezwiemy."
+    "co.placed":"Dziękujemy! Otworzyliśmy wiadomość z Twoim zamówieniem - wyślij ją do nas, a odezwiemy się w sprawie płatności i wysyłki."
   },
   en:{
     "nav.about":"About","nav.portfolio":"Portfolio","nav.shop":"Shop","nav.contact":"Contact",
@@ -188,6 +188,6 @@ const I18N = {
     "co.paynote":"Online payments will be connected soon. Place your order and we'll be in touch about payment and shipping.",
     "co.summary":"Summary","co.subtotal":"Artwork value","co.shippingfee":"Shipping","co.free":"free","co.grand":"Total due",
     "co.place":"Place order","co.empty":"Your cart is empty.","co.emptycta":"Back to shop",
-    "co.placed":"Thank you! Your order has been saved - we'll be in touch shortly."
+    "co.placed":"Thank you! We've opened an email with your order - send it to us and we'll be in touch about payment and shipping."
   }
 };

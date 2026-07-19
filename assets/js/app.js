@@ -225,10 +225,21 @@ function fillLightbox(){
   $("#lbDim").textContent = a.dim + (a.year&&a.year!=="[rok]"?" · "+a.year:"");
   $("#lbDesc").textContent = a.desc[lang];
   $("#lbPrice").textContent = fmt(a.price);
+  const badge = $("#lbBadge");
+  if(badge){ badge.textContent = t("shop.sold"); badge.style.display = a.sold ? "inline-block":"none"; }
   const addBtn = $("#lbAdd");
-  addBtn.textContent = t("lb.add");
-  addBtn.onclick = ()=>{ addToCart(a.id); };
-  addBtn.style.display = a.sold ? "none":"inline-flex";
+  if(a.sold){
+    addBtn.textContent = t("shop.sold");
+    addBtn.disabled = true;
+    addBtn.classList.remove("btn-accent"); addBtn.classList.add("btn-ghost");
+    addBtn.onclick = null;
+  } else {
+    addBtn.textContent = t("lb.add");
+    addBtn.disabled = false;
+    addBtn.classList.remove("btn-ghost"); addBtn.classList.add("btn-accent");
+    addBtn.onclick = ()=>addToCart(a.id);
+  }
+  addBtn.style.display = "inline-flex";
   $("#lbShop").textContent = t("lb.shop");
 }
 function refreshLightboxLang(){ if($("#lightbox")?.classList.contains("open")) fillLightbox(); }
@@ -278,11 +289,36 @@ function renderCheckout(){
   wrap.querySelector("#coShip").textContent = t("co.free");
   wrap.querySelector("#coGrand").textContent = fmt(sub);
 }
+const SHOP_EMAIL = "iwonkaus@wp.pl";
 const coForm = $("#coForm");
 if(coForm){
   coForm.addEventListener("submit", e=>{
     e.preventDefault();
     if(!coForm.reportValidity()) return;
+    const lines = cartLines();
+    const val = id => (document.getElementById(id)?.value || "").trim();
+    const itemsTxt = lines.map(l=>`- ${l.item.title.pl} (${l.item.medium.pl}) x${l.qty} = ${fmt(l.item.price*l.qty)}`).join("\n");
+    const body =
+`Nowe zamowienie ze strony iwonakaus.pl
+
+ZAMOWIENIE:
+${itemsTxt}
+Razem: ${fmt(cartTotal())}
+
+KLIENT:
+${val("coFirst")} ${val("coLast")}
+E-mail: ${val("coEmail")}
+Telefon: ${val("coPhone")}
+
+WYSYLKA:
+${val("coStreet")}
+${val("coZip")} ${val("coCity")}
+${val("coCountry")}
+
+Uwagi: ${val("coNotes")}`;
+    const subject = `Zamowienie iwonakaus.pl - ${val("coFirst")} ${val("coLast")}`;
+    // interim: open the customer's mail client prefilled to the artist (no backend yet)
+    window.location.href = `mailto:${SHOP_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     localStorage.removeItem(LS_CART); updateCartCount();
     const done = $("#coDone");
     $("#coLayout").style.display="none";
@@ -312,5 +348,8 @@ document.addEventListener("DOMContentLoaded", ()=>{
   renderCheckout();
   renderCart();
   observeReveals();
+  // deep-link: #art=<id> opens that artwork's popup
+  const h = location.hash.match(/^#art=(\w+)/);
+  if(h && ALL_BY_ID[h[1]]) openLightbox(h[1]);
 });
 })();

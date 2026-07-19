@@ -60,24 +60,24 @@
         <form id="coForm" novalidate>
           <div class="fieldset-title" data-i18n="co.contact">Dane kontaktowe</div>
           <div class="field two">
-            <div><label data-i18n="co.firstname">Imię</label><input type="text" required></div>
-            <div><label data-i18n="co.lastname">Nazwisko</label><input type="text" required></div>
+            <div><label data-i18n="co.firstname">Imię</label><input id="coFirst" type="text" required></div>
+            <div><label data-i18n="co.lastname">Nazwisko</label><input id="coLast" type="text" required></div>
           </div>
           <div class="field two">
-            <div><label data-i18n="co.email">E-mail</label><input type="email" required></div>
-            <div><label data-i18n="co.phone">Telefon</label><input type="tel"></div>
+            <div><label data-i18n="co.email">E-mail</label><input id="coEmail" type="email" required></div>
+            <div><label data-i18n="co.phone">Telefon</label><input id="coPhone" type="tel"></div>
           </div>
 
           <div class="fieldset-title" data-i18n="co.shipping">Adres wysyłki</div>
-          <div class="field"><label data-i18n="co.street">Ulica i numer</label><input type="text" required></div>
+          <div class="field"><label data-i18n="co.street">Ulica i numer</label><input id="coStreet" type="text" required></div>
           <div class="field two">
-            <div><label data-i18n="co.zip">Kod pocztowy</label><input type="text" required></div>
-            <div><label data-i18n="co.city">Miasto</label><input type="text" required></div>
+            <div><label data-i18n="co.zip">Kod pocztowy</label><input id="coZip" type="text" required></div>
+            <div><label data-i18n="co.city">Miasto</label><input id="coCity" type="text" required></div>
           </div>
           <div class="field"><label data-i18n="co.country">Kraj</label>
-            <select><option>Polska</option><option>Deutschland</option><option>United Kingdom</option><option>United States</option><option>Other / Inny</option></select>
+            <select id="coCountry"><option>Polska</option><option>Deutschland</option><option>United Kingdom</option><option>United States</option><option>Other / Inny</option></select>
           </div>
-          <div class="field"><label data-i18n="co.notes">Uwagi do zamówienia</label><textarea rows="3"></textarea></div>
+          <div class="field"><label data-i18n="co.notes">Uwagi do zamówienia</label><textarea id="coNotes" rows="3"></textarea></div>
 
           <div class="fieldset-title" data-i18n="co.payment">Płatność</div>
           <div class="pay-note">
