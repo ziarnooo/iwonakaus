@@ -10,6 +10,7 @@ const $  = (s,r=document)=>r.querySelector(s);
 const $$ = (s,r=document)=>Array.from(r.querySelectorAll(s));
 const LS_LANG = "ik_lang", LS_CART = "ik_cart";
 const fmt = n => new Intl.NumberFormat("pl-PL").format(n) + " zł";
+function goToCheckout(){ location.href = "/checkout/"; }
 const svg = {
   arrowL:'<svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>',
   arrowR:'<svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>',
@@ -192,7 +193,7 @@ function renderShop(){
   const oc=$("#countObraz"), pc=$("#countPrint");
   if(oc) oc.textContent = ARTWORKS.obraz.length;
   if(pc) pc.textContent = ARTWORKS.print.length;
-  grid.querySelectorAll("[data-add]").forEach(b=>b.onclick=()=>addToCart(b.dataset.add));
+  grid.querySelectorAll("[data-add]").forEach(b=>b.onclick=()=>{ addToCart(b.dataset.add); goToCheckout(); });
   grid.querySelectorAll("[data-view]").forEach(el=>el.onclick=()=>openLightbox(el.dataset.view));
   observeReveals(grid);
 }
@@ -248,10 +249,19 @@ function fillLightbox(){
     addBtn.textContent = t("lb.add");
     addBtn.disabled = false;
     addBtn.classList.remove("btn-ghost"); addBtn.classList.add("btn-accent");
-    addBtn.onclick = ()=>addToCart(a.id);
+    addBtn.onclick = ()=>{ addToCart(a.id); goToCheckout(); };
   }
   addBtn.style.display = "inline-flex";
-  $("#lbShop").textContent = t("lb.shop");
+  // secondary: "Powrót do sklepu" — na stronie sklepu zamyka podgląd, poza nią prowadzi do /sklep
+  const shopBtn = $("#lbShop");
+  shopBtn.textContent = t("lb.shop");
+  if($("#shopGrid")){
+    shopBtn.setAttribute("href","#");
+    shopBtn.onclick = e=>{ e.preventDefault(); closeLightbox(); };
+  } else {
+    shopBtn.setAttribute("href","/sklep/");
+    shopBtn.onclick = null;
+  }
 }
 function refreshLightboxLang(){ if($("#lightbox")?.classList.contains("open")) fillLightbox(); }
 function lbGo(dir){

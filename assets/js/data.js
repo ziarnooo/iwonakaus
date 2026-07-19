@@ -133,7 +133,7 @@ const I18N = {
     "cart.title":"Koszyk","cart.empty":"Twój koszyk jest pusty.","cart.total":"Razem","cart.checkout":"Do kasy","cart.remove":"Usuń",
     "cart.added":"Dodano do koszyka",
     /* lightbox */
-    "lb.add":"Do koszyka","lb.shop":"Zobacz w sklepie",
+    "lb.add":"Do koszyka","lb.shop":"Powrót do sklepu",
     /* checkout */
     "co.eyebrow":"Zamówienie","co.title":"Do kasy","co.contact":"Dane kontaktowe","co.shipping":"Adres wysyłki","co.payment":"Płatność",
     "co.firstname":"Imię","co.lastname":"Nazwisko","co.email":"E-mail","co.phone":"Telefon",
@@ -183,7 +183,7 @@ const I18N = {
     "shop.pricenote":"artwork price",
     "cart.title":"Cart","cart.empty":"Your cart is empty.","cart.total":"Total","cart.checkout":"Checkout","cart.remove":"Remove",
     "cart.added":"Added to cart",
-    "lb.add":"Add to cart","lb.shop":"View in shop",
+    "lb.add":"Add to cart","lb.shop":"Back to shop",
     "co.eyebrow":"Order","co.title":"Checkout","co.contact":"Contact details","co.shipping":"Shipping address","co.payment":"Payment",
     "co.firstname":"First name","co.lastname":"Last name","co.email":"Email","co.phone":"Phone",
     "co.street":"Street and number","co.city":"City","co.zip":"Postcode","co.country":"Country","co.notes":"Order notes (optional)",
