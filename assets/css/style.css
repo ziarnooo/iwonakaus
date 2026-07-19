@@ -393,6 +393,8 @@ footer p.small{color:var(--muted);margin-top:1rem;max-width:26rem;font-size:.96r
 .co-totals .row.grand{margin-top:.8rem;padding-top:1rem;border-top:1px solid var(--line);color:var(--ink)}
 .co-totals .row.grand .v{font-family:var(--font-display);font-size:1.7rem}
 .co-summary .btn{width:100%;justify-content:center;margin-top:1.5rem}
+.co-actions{display:flex;gap:.6rem;justify-content:center;margin-top:1.4rem;flex-wrap:wrap}
+.co-actions .btn{width:auto;margin-top:0}
 .co-empty{text-align:center;padding:5rem 1rem}
 .co-empty p{color:var(--muted);margin:1rem 0 1.8rem}
 

@@ -162,6 +162,7 @@ function renderCart(){
 function openCart(){ $("#cartDrawer")?.classList.add("open"); $("#overlay")?.classList.add("open"); document.body.classList.add("no-scroll"); }
 function closeCart(){ $("#cartDrawer")?.classList.remove("open"); $("#overlay")?.classList.remove("open"); document.body.classList.remove("no-scroll"); }
 $$(".cart-btn").forEach(b=>b.addEventListener("click", openCart));
+$$("[data-open-cart]").forEach(b=>b.addEventListener("click", openCart));
 $("#cartClose")?.addEventListener("click", closeCart);
 $("#overlay")?.addEventListener("click", closeCart);
 
