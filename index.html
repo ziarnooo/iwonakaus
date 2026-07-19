@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Iwona Kaus — Malarstwo portretowe</title>
+<meta name="description" content="Iwona Kaus — malarka portrecistka. Olej, akwarela, rysunek. Portfolio oraz oryginalne obrazy i sygnowane printy do kupienia z pracowni.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=Mrs+Saint+Delafield&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<!-- ===================== NAV ===================== -->
+<header class="nav">
+  <div class="wrap">
+    <a href="index.html" class="brand">Iwona <b>Kaus</b></a>
+    <nav class="nav-links">
+      <a href="#about" class="navlink" data-i18n="nav.about">O malarce</a>
+      <a href="#portfolio" class="navlink" data-i18n="nav.portfolio">Portfolio</a>
+      <a href="sklep.html" class="navlink" data-i18n="nav.shop">Sklep</a>
+      <a href="#contact" class="navlink" data-i18n="nav.contact">Kontakt</a>
+    </nav>
+    <div class="nav-tools">
+      <div class="lang">
+        <button data-lang="pl">PL</button>
+        <button data-lang="en">EN</button>
+      </div>
+      <button class="cart-btn" aria-label="Cart">
+        <svg viewBox="0 0 24 24"><path d="M6 6h15l-1.5 9h-12z"/><circle cx="9" cy="20" r="1"/><circle cx="18" cy="20" r="1"/><path d="M6 6L5 3H2"/></svg>
+        <span class="cart-count">0</span>
+      </button>
+      <button class="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero">
+  <div class="slides" id="slides"></div>
+  <button class="hero-arrow prev" id="heroPrev" aria-label="Poprzedni"><svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg></button>
+  <button class="hero-arrow next" id="heroNext" aria-label="Następny"><svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></button>
+  <div class="hero-content">
+    <div class="wrap">
+      <span class="eyebrow" data-i18n="hero.eyebrow">Malarstwo · Portret</span>
+      <h1 class="display" data-i18n="hero.title">Twarze, które <em>pamiętają</em> światło</h1>
+      <p class="lede" data-i18n="hero.lede">Olej, akwarela i rysunek. Portrety wydobyte z półmroku.</p>
+      <div class="hero-cta">
+        <a href="#portfolio" class="btn btn-primary"><span data-i18n="hero.cta1">Zobacz portfolio</span> <span class="arw">→</span></a>
+        <a href="sklep.html" class="btn btn-ghost"><span data-i18n="hero.cta2">Kup obraz</span></a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-dots" id="heroDots"></div>
+  <span class="scroll-cue" data-i18n="hero.scroll">Przewiń</span>
+</section>
+
+<!-- ===================== ABOUT ===================== -->
+<section class="section about" id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-portrait reveal">
+        <img src="assets/img/art-03-dziewczyna-roza.png" alt="Iwona Kaus — pracownia">
+        <span class="frame"></span>
+      </div>
+      <div>
+        <span class="eyebrow reveal" data-i18n="about.eyebrow">O malarce</span>
+        <h2 class="title reveal d1" data-i18n="about.title">Iwona <em>Kaus</em></h2>
+        <p class="lede reveal d2" data-i18n="about.lede">Malarka portrecistka.</p>
+        <p class="body reveal d2" data-i18n="about.p1">[DO UZUPEŁNIENIA]</p>
+        <p class="body reveal d3" data-i18n="about.p2">[DO UZUPEŁNIENIA]</p>
+        <div class="sign-wrap reveal d3">
+          <div class="signature">Iwona Kaus</div>
+          <div class="sign-role" data-i18n="about.signrole">Malarka · pracownia malarstwa</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="facts">
+      <div class="reveal">
+        <h4 data-i18n="facts.tech.title">Techniki</h4>
+        <ul>
+          <li><span class="k" data-i18n="facts.tech.1k">Olej</span><span class="v" data-i18n="facts.tech.1v"></span></li>
+          <li><span class="k" data-i18n="facts.tech.2k">Akwarela</span><span class="v" data-i18n="facts.tech.2v"></span></li>
+          <li><span class="k" data-i18n="facts.tech.3k">Rysunek</span><span class="v" data-i18n="facts.tech.3v"></span></li>
+        </ul>
+      </div>
+      <div class="reveal d1">
+        <h4 data-i18n="facts.edu.title">Wykształcenie</h4>
+        <ul>
+          <li><span class="k" data-i18n="facts.edu.1k">UMCS</span><span class="v" data-i18n="facts.edu.1v"></span></li>
+          <li><span class="k" data-i18n="facts.edu.2k">WSSP</span><span class="v" data-i18n="facts.edu.2v"></span></li>
+          <li><span class="k" data-i18n="facts.edu.3k">Dyplom</span><span class="v" data-i18n="facts.edu.3v"></span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PORTFOLIO ===================== -->
+<section class="section" id="portfolio">
+  <div class="wrap">
+    <div class="pf-head">
+      <div>
+        <span class="eyebrow reveal" data-i18n="pf.eyebrow">Wybrane prace</span>
+        <h2 class="title reveal d1" data-i18n="pf.title">Portfolio</h2>
+      </div>
+      <a href="sklep.html" class="link-arw reveal d1"><span data-i18n="pf.cta">Cały sklep</span> <span>→</span></a>
+    </div>
+    <div class="pf-grid" id="pfGrid"></div>
+  </div>
+</section>
+
+<!-- ===================== QUOTE ===================== -->
+<section class="section quote">
+  <div class="wrap">
+    <blockquote class="reveal" data-i18n="quote.text">„…”</blockquote>
+    <cite class="reveal d1" data-i18n="quote.cite">Iwona Kaus</cite>
+  </div>
+</section>
+
+<!-- ===================== SHOP CTA ===================== -->
+<section class="section shop-cta">
+  <div class="wrap">
+    <span class="eyebrow reveal" style="justify-content:center" data-i18n="shopcta.eyebrow">Kolekcja</span>
+    <h2 class="title reveal d1" data-i18n="shopcta.title">Zabierz obraz do domu</h2>
+    <p class="lede reveal d2" data-i18n="shopcta.lede"></p>
+    <a href="sklep.html" class="btn btn-accent reveal d2"><span data-i18n="shopcta.btn">Przejdź do sklepu</span> <span class="arw">→</span></a>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer id="contact">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">Iwona <b>Kaus</b></div>
+        <p class="small" data-i18n="foot.tagline"></p>
+      </div>
+      <div class="foot-col">
+        <h5 data-i18n="foot.explore">Nawigacja</h5>
+        <a href="#about" data-i18n="nav.about">O malarce</a>
+        <a href="#portfolio" data-i18n="nav.portfolio">Portfolio</a>
+        <a href="sklep.html" data-i18n="nav.shop">Sklep</a>
+      </div>
+      <div class="foot-col">
+        <h5 data-i18n="foot.contact">Kontakt</h5>
+        <a href="mailto:kontakt@iwonakaus.pl">kontakt@iwonakaus.pl</a>
+        <span>+48 [DO UZUPEŁNIENIA]</span>
+        <a href="https://www.facebook.com/profile.php?id=100009621670261" target="_blank" rel="noopener">Facebook ↗</a>
+        <span>[Miasto / pracownia]</span>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="year"></span> Iwona Kaus. <span data-i18n="foot.rights">Wszelkie prawa zastrzeżone.</span></span>
+      <span data-i18n="foot.made">Portfolio & sklep</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ===================== CART DRAWER ===================== -->
+<div class="overlay" id="overlay"></div>
+<aside class="drawer" id="cartDrawer" aria-label="Cart">
+  <div class="drawer-head">
+    <h3 data-i18n="cart.title">Koszyk</h3>
+    <button class="drawer-close" id="cartClose" aria-label="Zamknij"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  </div>
+  <div class="drawer-body" id="cartBody"></div>
+  <div class="drawer-foot" id="cartFoot">
+    <div class="row"><span class="lbl" data-i18n="cart.total">Razem</span><span class="sum" id="cartSum">0 zł</span></div>
+    <a href="checkout.html" class="btn btn-accent"><span data-i18n="cart.checkout">Do kasy</span> <span class="arw">→</span></a>
+  </div>
+</aside>
+
+<!-- ===================== LIGHTBOX ===================== -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="lb-close" id="lbClose" aria-label="Zamknij"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  <div class="lb-inner">
+    <div class="lb-fig">
+      <button class="lb-nav prev" id="lbPrev" aria-label="Poprzedni"><svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg></button>
+      <img id="lbImg" src="" alt="">
+      <button class="lb-nav next" id="lbNext" aria-label="Następny"><svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></button>
+    </div>
+    <div class="lb-info">
+      <div class="eyebrow" id="lbMedium"></div>
+      <h3 id="lbTitle"></h3>
+      <div class="lb-medium" id="lbDim"></div>
+      <p id="lbDesc"></p>
+      <div class="lb-price" id="lbPrice"></div>
+      <div class="lb-actions">
+        <button class="btn btn-accent" id="lbAdd"></button>
+        <a href="sklep.html" class="btn btn-ghost" id="lbShop"></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/app.js"></script>
+<script>document.getElementById("year").textContent=new Date().getFullYear();</script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zamówienie — Iwona Kaus</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=Mrs+Saint+Delafield&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<!-- ===================== NAV ===================== -->
+<header class="nav scrolled">
+  <div class="wrap">
+    <a href="index.html" class="brand">Iwona <b>Kaus</b></a>
+    <nav class="nav-links">
+      <a href="index.html#about" class="navlink" data-i18n="nav.about">O malarce</a>
+      <a href="index.html#portfolio" class="navlink" data-i18n="nav.portfolio">Portfolio</a>
+      <a href="sklep.html" class="navlink" data-i18n="nav.shop">Sklep</a>
+      <a href="index.html#contact" class="navlink" data-i18n="nav.contact">Kontakt</a>
+    </nav>
+    <div class="nav-tools">
+      <div class="lang">
+        <button data-lang="pl">PL</button>
+        <button data-lang="en">EN</button>
+      </div>
+      <button class="cart-btn" aria-label="Cart">
+        <svg viewBox="0 0 24 24"><path d="M6 6h15l-1.5 9h-12z"/><circle cx="9" cy="20" r="1"/><circle cx="18" cy="20" r="1"/><path d="M6 6L5 3H2"/></svg>
+        <span class="cart-count">0</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main class="section checkout">
+  <div class="wrap">
+    <span class="eyebrow reveal" data-i18n="co.eyebrow">Zamówienie</span>
+    <h1 class="title reveal d1" data-i18n="co.title" style="margin:1rem 0 2.5rem">Do kasy</h1>
+
+    <!-- empty state -->
+    <div class="co-empty" id="coEmpty" style="display:none">
+      <h2 class="title" data-i18n="co.empty">Koszyk jest pusty.</h2>
+      <p></p>
+      <a href="sklep.html" class="btn btn-accent"><span data-i18n="co.emptycta">Wróć do sklepu</span> <span class="arw">→</span></a>
+    </div>
+
+    <!-- success state -->
+    <div class="co-empty" id="coDone" style="display:none">
+      <h2 class="title" data-i18n="co.placed">Dziękujemy!</h2>
+      <p></p>
+      <a href="index.html" class="btn btn-primary"><span>Iwona Kaus</span> <span class="arw">→</span></a>
+    </div>
+
+    <div class="co-grid" id="coLayout">
+      <!-- FORM -->
+      <div class="co-form" id="coFormCard">
+        <form id="coForm" novalidate>
+          <div class="fieldset-title" data-i18n="co.contact">Dane kontaktowe</div>
+          <div class="field two">
+            <div><label data-i18n="co.firstname">Imię</label><input type="text" required></div>
+            <div><label data-i18n="co.lastname">Nazwisko</label><input type="text" required></div>
+          </div>
+          <div class="field two">
+            <div><label data-i18n="co.email">E-mail</label><input type="email" required></div>
+            <div><label data-i18n="co.phone">Telefon</label><input type="tel"></div>
+          </div>
+
+          <div class="fieldset-title" data-i18n="co.shipping">Adres wysyłki</div>
+          <div class="field"><label data-i18n="co.street">Ulica i numer</label><input type="text" required></div>
+          <div class="field two">
+            <div><label data-i18n="co.zip">Kod pocztowy</label><input type="text" required></div>
+            <div><label data-i18n="co.city">Miasto</label><input type="text" required></div>
+          </div>
+          <div class="field"><label data-i18n="co.country">Kraj</label>
+            <select><option>Polska</option><option>Deutschland</option><option>United Kingdom</option><option>United States</option><option>Other / Inny</option></select>
+          </div>
+          <div class="field"><label data-i18n="co.notes">Uwagi do zamówienia</label><textarea rows="3"></textarea></div>
+
+          <div class="fieldset-title" data-i18n="co.payment">Płatność</div>
+          <div class="pay-note">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>
+            <span data-i18n="co.paynote"></span>
+          </div>
+
+          <button type="submit" class="btn btn-accent" style="margin-top:1.8rem"><span data-i18n="co.place">Złóż zamówienie</span> <span class="arw">→</span></button>
+        </form>
+      </div>
+
+      <!-- SUMMARY -->
+      <aside class="co-summary" id="coSummary">
+        <h3 data-i18n="co.summary">Podsumowanie</h3>
+        <div id="coLines"></div>
+        <div class="co-totals">
+          <div class="row"><span data-i18n="co.subtotal">Wartość dzieł</span><span id="coSub">0 zł</span></div>
+          <div class="row"><span data-i18n="co.shippingfee">Wysyłka</span><span id="coShip">gratis</span></div>
+          <div class="row grand"><span data-i18n="co.grand">Do zapłaty</span><span class="v" id="coGrand">0 zł</span></div>
+        </div>
+        <a href="sklep.html" class="link-arw" style="margin-top:1.4rem;justify-content:center;display:flex"><span>←</span> <span data-i18n="nav.shop">Sklep</span></a>
+      </aside>
+    </div>
+  </div>
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer>
+  <div class="wrap">
+    <div class="foot-bottom" style="margin-top:0;border-top:0">
+      <span>© <span id="year"></span> Iwona Kaus. <span data-i18n="foot.rights">Wszelkie prawa zastrzeżone.</span></span>
+      <a href="index.html" class="link-arw"><span data-i18n="foot.made">Portfolio & sklep</span></a>
+    </div>
+  </div>
+</footer>
+
+<!-- cart drawer (for the nav cart button) -->
+<div class="overlay" id="overlay"></div>
+<aside class="drawer" id="cartDrawer" aria-label="Cart">
+  <div class="drawer-head">
+    <h3 data-i18n="cart.title">Koszyk</h3>
+    <button class="drawer-close" id="cartClose" aria-label="Zamknij"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  </div>
+  <div class="drawer-body" id="cartBody"></div>
+  <div class="drawer-foot" id="cartFoot">
+    <div class="row"><span class="lbl" data-i18n="cart.total">Razem</span><span class="sum" id="cartSum">0 zł</span></div>
+    <a href="checkout.html" class="btn btn-accent"><span data-i18n="cart.checkout">Do kasy</span></a>
+  </div>
+</aside>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/app.js"></script>
+<script>document.getElementById("year").textContent=new Date().getFullYear();</script>
+</body>
+</html>

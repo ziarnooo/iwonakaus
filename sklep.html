@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sklep — Iwona Kaus</title>
+<meta name="description" content="Sklep Iwony Kaus — oryginalne obrazy olejne i akwarele oraz limitowane, sygnowane printy.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=Mrs+Saint+Delafield&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<!-- ===================== NAV ===================== -->
+<header class="nav scrolled">
+  <div class="wrap">
+    <a href="index.html" class="brand">Iwona <b>Kaus</b></a>
+    <nav class="nav-links">
+      <a href="index.html#about" class="navlink" data-i18n="nav.about">O malarce</a>
+      <a href="index.html#portfolio" class="navlink" data-i18n="nav.portfolio">Portfolio</a>
+      <a href="sklep.html" class="navlink active" data-i18n="nav.shop">Sklep</a>
+      <a href="index.html#contact" class="navlink" data-i18n="nav.contact">Kontakt</a>
+    </nav>
+    <div class="nav-tools">
+      <div class="lang">
+        <button data-lang="pl">PL</button>
+        <button data-lang="en">EN</button>
+      </div>
+      <button class="cart-btn" aria-label="Cart">
+        <svg viewBox="0 0 24 24"><path d="M6 6h15l-1.5 9h-12z"/><circle cx="9" cy="20" r="1"/><circle cx="18" cy="20" r="1"/><path d="M6 6L5 3H2"/></svg>
+        <span class="cart-count">0</span>
+      </button>
+      <button class="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- ===================== HEAD ===================== -->
+<section class="page-head">
+  <div class="wrap">
+    <span class="eyebrow reveal" data-i18n="shop.eyebrow">Sklep</span>
+    <h1 class="display reveal d1" data-i18n="shop.title">Kup dzieło</h1>
+    <p class="lede reveal d2" data-i18n="shop.lede"></p>
+  </div>
+</section>
+
+<!-- ===================== SHOP ===================== -->
+<section class="section" style="padding-top:0">
+  <div class="wrap">
+    <div class="shop-toolbar">
+      <button class="tab on" data-cat="obraz"><span data-i18n="shop.tab.obraz">Obrazy</span><span class="n" id="countObraz"></span></button>
+      <button class="tab" data-cat="print"><span data-i18n="shop.tab.print">Printy</span><span class="n" id="countPrint"></span></button>
+    </div>
+    <div class="shop-grid" id="shopGrid"></div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer id="contact">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">Iwona <b>Kaus</b></div>
+        <p class="small" data-i18n="foot.tagline"></p>
+      </div>
+      <div class="foot-col">
+        <h5 data-i18n="foot.shopcol">Sklep</h5>
+        <a href="sklep.html" data-i18n="foot.originals">Obrazy oryginalne</a>
+        <a href="sklep.html" data-i18n="foot.prints">Printy sygnowane</a>
+      </div>
+      <div class="foot-col">
+        <h5 data-i18n="foot.contact">Kontakt</h5>
+        <a href="mailto:kontakt@iwonakaus.pl">kontakt@iwonakaus.pl</a>
+        <span>+48 [DO UZUPEŁNIENIA]</span>
+        <a href="https://www.facebook.com/profile.php?id=100009621670261" target="_blank" rel="noopener">Facebook ↗</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="year"></span> Iwona Kaus. <span data-i18n="foot.rights">Wszelkie prawa zastrzeżone.</span></span>
+      <span data-i18n="foot.made">Portfolio & sklep</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ===================== CART DRAWER ===================== -->
+<div class="overlay" id="overlay"></div>
+<aside class="drawer" id="cartDrawer" aria-label="Cart">
+  <div class="drawer-head">
+    <h3 data-i18n="cart.title">Koszyk</h3>
+    <button class="drawer-close" id="cartClose" aria-label="Zamknij"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  </div>
+  <div class="drawer-body" id="cartBody"></div>
+  <div class="drawer-foot" id="cartFoot">
+    <div class="row"><span class="lbl" data-i18n="cart.total">Razem</span><span class="sum" id="cartSum">0 zł</span></div>
+    <a href="checkout.html" class="btn btn-accent"><span data-i18n="cart.checkout">Do kasy</span> <span class="arw">→</span></a>
+  </div>
+</aside>
+
+<!-- ===================== LIGHTBOX ===================== -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="lb-close" id="lbClose" aria-label="Zamknij"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  <div class="lb-inner">
+    <div class="lb-fig">
+      <button class="lb-nav prev" id="lbPrev" aria-label="Poprzedni"><svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg></button>
+      <img id="lbImg" src="" alt="">
+      <button class="lb-nav next" id="lbNext" aria-label="Następny"><svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></button>
+    </div>
+    <div class="lb-info">
+      <div class="eyebrow" id="lbMedium"></div>
+      <h3 id="lbTitle"></h3>
+      <div class="lb-medium" id="lbDim"></div>
+      <p id="lbDesc"></p>
+      <div class="lb-price" id="lbPrice"></div>
+      <div class="lb-actions">
+        <button class="btn btn-accent" id="lbAdd"></button>
+        <a href="sklep.html" class="btn btn-ghost" id="lbShop"></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/app.js"></script>
+<script>document.getElementById("year").textContent=new Date().getFullYear();</script>
+</body>
+</html>
