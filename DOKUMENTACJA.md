@@ -118,11 +118,16 @@ zapisana — zawsze można cofnąć.
 
 ## 5. Zamówienia — co się dzieje, gdy ktoś kupuje
 
-1. Klient dodaje dzieła do koszyka i przechodzi do **Kasy** (`/checkout`).
+1. Klient klika **„Do koszyka"** (na kaflu w sklepie albo w podglądzie obrazu) — pozycja
+   trafia do koszyka i **od razu otwiera się Kasa** (`/checkout`). Kolejne dodania podbijają
+   ilość i aktualizują koszyk.
 2. Wypełnia dane (imię, e-mail, adres) i klika **„Złóż zamówienie"**.
 3. Zamówienie (lista dzieł + dane klienta) leci przez **Web3Forms** na skrzynkę
    e-mail skonfigurowaną w koncie Web3Forms.
 4. Klient widzi podziękowanie, koszyk się czyści.
+
+> W podglądzie pojedynczego obrazu przycisk obok to **„Powrót do sklepu"**. Obrazy oznaczone
+> jako sprzedane mają zablokowane kupno (widnieje „Sprzedane").
 
 > 💳 **Płatności jeszcze nie są podpięte.** Na razie zamówienie to zgłoszenie mailowe —
 > po jego otrzymaniu kontaktujecie się z klientem w sprawie płatności i wysyłki.
@@ -153,14 +158,20 @@ działa na `iwonakaus.pl` (nie liczą testów lokalnych).
   A     @     185.199.111.153
   CNAME www   ziarnooo.github.io.
   ```
-- **HTTPS (kłódka):** GitHub automatycznie wystawia darmowy certyfikat SSL po tym, jak DNS
-  zacznie poprawnie wskazywać (już wskazuje). Może to potrwać od kilkunastu minut do ~1 godziny.
-- **Gdy GitHub pokaże błąd „NotServedByPagesError / improperly configured":** to zwykle tylko
-  opóźnienie sprawdzania po stronie GitHuba (strona już działa przez `http://`). Można to
-  przyspieszyć: GitHub → repo `iwonakaus` → **Settings → Pages** → w polu „Custom domain"
-  usuń `iwonakaus.pl`, kliknij Save, wpisz je ponownie, Save. To wymusza ponowne sprawdzenie.
-- Gdy `https://iwonakaus.pl` już się otwiera z kłódką: w **Settings → Pages** zaznacz
-  **„Enforce HTTPS"** (wymuszaj HTTPS).
+- **HTTPS (kłódka): DZIAŁA** ✅ — certyfikat SSL jest wystawiony, a „Enforce HTTPS"
+  (wymuszanie szyfrowania) jest włączone. Strona zawsze otwiera się po `https://`.
+- **(Opcjonalnie, zalecane) rekordy IPv6 (AAAA):** dla pełnej zgodności (m.in. scraper
+  Facebooka działa po IPv6) warto dodać w edytorze strefy DNS w cyberfolks obok rekordów A:
+  ```
+  AAAA  @  2606:50c0:8000::153
+  AAAA  @  2606:50c0:8001::153
+  AAAA  @  2606:50c0:8002::153
+  AAAA  @  2606:50c0:8003::153
+  ```
+- **Gdyby kiedyś wrócił błąd „NotServedByPagesError / improperly configured":** to zwykle
+  opóźnienie po stronie GitHuba. Reset: GitHub → repo `iwonakaus` → **Settings → Pages** →
+  w polu „Custom domain" usuń `iwonakaus.pl`, Save, wpisz ponownie, Save (wymusza ponowne
+  sprawdzenie i odnowienie certyfikatu).
 
 ---
 
@@ -198,6 +209,8 @@ assets/
   fonts/              → pliki czcionki PP Hatton
   og/og-image.png     → obrazek podglądu przy udostępnianiu linku
 favicon.svg           → ikonka w karcie przeglądarki (monogram „IK")
+robots.txt            → pozwala wyszukiwarkom/scraperom (nie ruszać)
+sitemap.xml           → mapa strony dla wyszukiwarek
 CNAME                 → informacja o domenie iwonakaus.pl (nie ruszać)
 ```
 
@@ -210,6 +223,8 @@ CNAME                 → informacja o domenie iwonakaus.pl (nie ruszać)
 - **Podgląd przy udostępnianiu** (Facebook, Messenger, iMessage): `assets/og/og-image.png`
   (obraz + „Iwona Kaus"). Podpięty w `index.html` i `sklep/index.html` (znacznik `og:image`).
 - Aby podmienić podgląd: zastąp plik `assets/og/og-image.png` nowym w proporcjach **1200 × 630 px**.
+- **Po zmianie podglądu odśwież cache Facebooka:** wejdź na `developers.facebook.com/tools/debug/`,
+  wklej `https://iwonakaus.pl` i kliknij **„Scrape Again"** (Facebook trzyma stary podgląd w pamięci).
 
 ---
 
@@ -221,7 +236,9 @@ CNAME                 → informacja o domenie iwonakaus.pl (nie ruszać)
 - [ ] **Potwierdzić e-mail:** `iwonkaus@wp.pl` czy `iwonakaus@wp.pl`.
 - [ ] **Licencja fontu PP Hatton** — dokupić webową albo podmienić font.
 - [ ] **Płatności online** — podpiąć bramkę (Przelewy24 / Autopay / Stripe).
-- [ ] **HTTPS** — po wystawieniu certyfikatu włączyć „Enforce HTTPS".
+- [ ] *(opcjonalnie)* dodać rekordy **AAAA (IPv6)** w cyberfolks — patrz pkt 7.
+- [x] ~~HTTPS / „Enforce HTTPS"~~ — **zrobione, kłódka działa.**
+- [x] ~~Favicon + podgląd OG~~ — **zrobione.**
 
 ---
 
